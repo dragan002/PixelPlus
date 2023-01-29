@@ -1,40 +1,5 @@
 
 
-// function changePicture(color) {
-// const socket = document.getElementById('socketImg');
-// const tan = document.getElementById('tan');
-// const white = document.getElementById('white');
-// const brown = document.getElementById('brown');
-// const yellow = document.getElementById('yellow');
-// const wheat = document.getElementById('wheat');
-
-// let colorNameElement = document.getElementById("color-name");
-//   colorNameElement.innerHTML = color;
-
-// socket.style.display="block";
-// tan.style.display = "none";
-// white.style.display = "none";
-// brown.style.display = "none";
-// yellow.style.display = "none";
-// wheat.style.display = "none";
-
-
-// if (color === "tan") {
-//     socket.src = tan.src;
-//   } else if (color === "white") {
-//     socket.src = white.src;
-//   } else if (color === "brown") {
-//     socket.src = brown.src;
-//   } else if (color === "yellow") {
-//     socket.src = yellow.src;
-//   } else if (color === "wheat") {
-//     socket.src = wheat.src;
-//   }
-// }
-
-
-
-
 document.getElementById("specification").addEventListener('click', function (e) {
   e.preventDefault();
   document.getElementById("specification").scrollIntoView({behavior: 'smooth'});
@@ -96,70 +61,36 @@ var emailAddress = document.getElementById("email-address");
 
 
 
-  let currentFinish = "tan";
-  let colorNameElement = document.getElementById("color-name");
-  colorNameElement.innerHTML = currentFinish;
-  
-  const socket = document.getElementById('socketImg');
-  const tan = document.getElementById('tan');
-  const white = document.getElementById('white');
-  const brown = document.getElementById('brown');
-  const yellow = document.getElementById('yellow');
-  const wheat = document.getElementById('wheat');
-  const colors = document.querySelectorAll('.colors div');
+  const currentFinish = "tan";  
+const socket = document.getElementById('socketImg');
+const tan = document.getElementById('tan');
+const white = document.getElementById('white');
+const brown = document.getElementById('brown');
+const yellow = document.getElementById('yellow');
+const wheat = document.getElementById('wheat');
+const colors = document.querySelectorAll('.colors div');
 
-  let currentIndexColor = 0;
-  colors[currentIndexColor].style.transform = 'scale(1.3)';
-  
-  socket.style.display = "block";
-  tan.style.display = "none";
-  white.style.display = "none";
-  brown.style.display = "none";
-  yellow.style.display = "none";
-  wheat.style.display = "none";
-  
-  function changePicture() {
-    if (currentFinish === "tan") {
-      socket.src = tan.src;
-      currentFinish = "white";
-    } else if (currentFinish === "white") {
-      socket.src = white.src;
-      currentFinish = "brown";
-    } else if (currentFinish === "brown") {
-      socket.src = brown.src;
-      currentFinish = "yellow";
-    } else if (currentFinish === "yellow") {
-      socket.src = yellow.src;
-      currentFinish = "wheat";
-    } else if (currentFinish === "wheat") {
-      socket.src = wheat.src;
-      currentFinish = "tan";
-    }
-    
-  }
+socket.style.display = "block";
+tan.style.display = "none";
+white.style.display = "none";
+brown.style.display = "none";
+yellow.style.display = "none";
+wheat.style.display = "none";
 
-  colors[currentIndex].style.transform = 'scale(1.3)';
-  function changeFinish() {
-    colors.forEach(color => {
-      color.style.transform = 'scale(1)';
-    });
-  
-  
-    colors[currentIndex].style.transform = 'scale(1.3)';
-  
-   
-    socketImg.src = `img/${colorNames[currentIndex]}.jpg`;
-  
-    currentIndex++;
-    if(currentIndex >= colors.length) {
-      currentIndex = 0;
-    }
-    
-    colors[currentIndex].style.transform = 'scale(1.3)';
-  }
-  setInterval(changeFinish, 2000);
-  setInterval(changePicture, 2000);
+function changePicture(color) {
+  if (color === "tan") {
+    socket.src = tan.src;
+  } else if (color === "white") {
+    socket.src = white.src;
+  } else if (color === "brown") {
+    socket.src = brown.src;
+  } else if (color === "yellow") {
+    socket.src = yellow.src;
+  } else if (color === "wheat") {
+    socket.src = wheat.src;
+  } 
+}
 
-  
+
 
   
